@@ -2,15 +2,18 @@ pipeline {
     agent any
 
     stages {
-        stage('Checkout') {
+        stage('Check Docker') {
             steps {
-                checkout scm
+                sh 'docker --version'
             }
         }
 
-        stage('Build Docker Image') {
+        stage('Build Image') {
             steps {
-                sh 'docker build -t mobile-web:ci .'
+                sh '''
+                  cd /var/jenkins_home/workspace/mobile-web-ci
+                  docker build -t mobile-web:ci .
+                '''
             }
         }
     }
