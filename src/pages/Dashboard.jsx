@@ -8,6 +8,7 @@ const Dashboard = () => (
 
       {/* ===============================
           HEADER
+        
       =============================== */}
       <div className="bg-white p-6 border mb-6">
         <h2 className="text-3xl font-semibold text-pinkPrimary mb-1">
@@ -34,7 +35,7 @@ const Dashboard = () => (
 
           <div>
             <p className="text-sm text-gray-500">Email Address</p>
-            <p className="font-medium">john@test.com</p>
+            <p className="font-medium">vikas@test.com</p>
           </div>
 
           <div>
