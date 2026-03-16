@@ -18,7 +18,7 @@ pipeline {
         stage('Build Docker Image') {
             steps {
                 sh '''
-                  docker build -t mobile-web:ci .
+                  docker build --no-cache -t mobile-web:ci .
                 '''
             }
         }
@@ -33,7 +33,7 @@ pipeline {
                   echo "Starting new container..."
                   docker run -d \
                     --name mobile-web \
-                    -p 8080:80 \
+                    -p 8081:80 \
                     mobile-web:ci
                 '''
             }
